@@ -29,7 +29,7 @@
 			</div> <!-- /.modal-header -->
 
 			<div class="modal-body">
-				<form role="form">
+				<form action="index.py" role="form" name="loginForm" id="loginForm" method="post">
 					<div class="form-group">
 						<div class="input-group">
 							<input  type="text" class="form-control" id="uLogin" name = "username" placeholder="User Name" required />
@@ -54,7 +54,7 @@
 			</div> <!-- /.modal-body -->
 
 			<div class="modal-footer">
-				<button type="submit" style="background-color: #7999ae;border-color: #7999ae;"
+				<button type="submit" form = "loginForm" style="background-color: #7999ae;border-color: #7999ae;"
 				class="form-control btn btn-primary">Sign In</button>
 
 			</div> <!-- /.modal-footer -->
