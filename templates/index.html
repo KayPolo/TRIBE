@@ -29,18 +29,18 @@
 			</div> <!-- /.modal-header -->
 
 			<div class="modal-body">
-				<form action="index.py" role="form" name="loginForm" id="loginForm" method="post">
+				<form action="{{ url_for('login') }}" role="form" name="loginForm" id="loginForm" method="post">
 					<div class="form-group">
 						<div class="input-group">
-							<input  type="text" class="form-control" id="uLogin" name = "username" placeholder="User Name" required />
 							<label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+							<input  type="text" class="form-control" id="uLogin" name = "username" placeholder="User Name" required />
 						</div>
 					</div> <!-- /.form-group -->
 
 					<div class="form-group">
 						<div class="input-group">
-							<input type="password" class="form-control" id="uPassword" name = "password" placeholder="Password" required />
 							<label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+							<input type="password" class="form-control" id="uPassword" name = "password" placeholder="Password" required />
 						</div> <!-- /.input-group -->
 					</div> <!-- /.form-group -->
 
@@ -54,9 +54,9 @@
 			</div> <!-- /.modal-body -->
 
 			<div class="modal-footer">
-				<button type="submit" form = "loginForm" style="background-color: #7999ae;border-color: #7999ae;"
-				class="form-control btn btn-primary">Sign In</button>
-
+				<!--<button type="submit" form = "loginForm" stwhenyle="background-color: #7999ae;border-color: #7999ae;"
+				class="form-control btn btn-primary">Sign In</button> -->
+				<input id = "submit" name = submit type = "submit" form = "loginForm" value = "Sign In">
 			</div> <!-- /.modal-footer -->
 
 		</div><!-- /.modal-content -->
