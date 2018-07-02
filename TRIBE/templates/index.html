@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>TRIBE</title>
+	<meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../assets/css/normalize.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+</head>
+<body>
+	
+	<button style="background-color:gold;     border-color: white; position:absolute; margin: 10px; right: 0;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Sign in
+</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<img style="width: 30%; margin-right: 35%;margin-left: 35%;" src="/Users/computer/Desktop/runway/TRIBE/assets/images">
+			
+			
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="position: absolute; right: 3%;">×</button>
+				
+			</div> <!-- /.modal-header -->
+
+			<div class="modal-body">
+				<form action="{{ url_for('login') }}" role="form" name="loginForm" id="loginForm" method="post">
+					<div class="form-group">
+						<div class="input-group">
+							<label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+							<input  type="text" class="form-control" id="uLogin" name = "username" placeholder="User Name" required />
+						</div>
+					</div> <!-- /.form-group -->
+
+					<div class="form-group">
+						<div class="input-group">
+							<label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+							<input type="password" class="form-control" id="uPassword" name = "password" placeholder="Password" required />
+						</div> <!-- /.input-group -->
+					</div> <!-- /.form-group -->
+
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> Remember me
+						</label>
+					</div> <!-- /.checkbox -->
+				</form>
+
+			</div> <!-- /.modal-body -->
+
+			<div class="modal-footer">
+				<!--<button type="submit" form = "loginForm" stwhenyle="background-color: #7999ae;border-color: #7999ae;"
+				class="form-control btn btn-primary">Sign In</button> -->
+				<input id = "submit" name = submit type = "submit" form = "loginForm" value = "Sign In">
+			</div> <!-- /.modal-footer -->
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->	
+
+
+
+
+
+
+	
+
+	<script type="text/javascript" src="../assets/js/jquery-min.js"></script>
+	<script type="text/javascript" src="../assets/js/main.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
