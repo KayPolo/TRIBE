@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Email</title>
+   </head>
+   <body>
+      <p>E-mail us:</p>
+      <form action="{{ url_for('email') }}" role="form" name="emailForm" id="emailForm" "method="post" enctype="text/plain">
+         <div class="form-group">
+            <div class="input-group">
+               <label for="uUser" class="input-group-addon glyphicon glyphicon-user"></label>
+               <input  type="text" class="form-control" id="uUser" name = "user" placeholder="Your Name" required />
+            </div>
+            <div class="input-group">
+               <label for="uRecipient" class="input-group-addon glyphicon glyphicon-user"></label>
+               <input  type="text" class="form-control" id="uRecipient" name = "recipient" placeholder="Recipients" required />
+            </div>
+         </div>
+         <!-- /.form-group -->
+         <div class="form-group">
+            <div class="input-group">
+               <label for="uMessage" class="input-group-addon glyphicon glyphicon-lock"></label>
+               <textarea class="form-control" id="uMessage" name = "message" placeholder="Message" required rows="15" cols="35">
+               </textarea>
+            </div>
+            <!-- /.input-group -->
+         </div>
+         <!-- /.form-group -->
+         <input id = "submit" name = submit type = "submit" form = "emailForm" value = "Send">
+      </form>
+   </body>
+</html>
+
