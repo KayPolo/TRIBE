@@ -1,19 +1,504 @@
-/*.selector-for-some-widget {
-  box-sizing: content-box;
-}*/
 
-.modal-dialog {
-    width: 300px;
-}
-.modal-footer {
-    height: 70px;
-    margin: 0;
-}
-.modal-footer .btn {
-    font-weight: bold;
+@import 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,700';
+	
+	body{
+		font-size: 16px;
+		font-family: 'Work Sans', sans-serif;
+		top: 0;
+	}	
+
+/*nav*/
+/*Hamberguer menu _ This is only visible on small displays*/
+	.ham-container{
+		position: fixed;
+		z-index: 90;
+		display: none;
+	}
+	
+	.hamberguer{
+		top: 5px;
+		left: 30px;
+		position: absolute;		
+	}
+/*
+Side Navegarion */
+	#mySideNav{
+	width: 0;
+	height: 100%;
+	z-index: 100;	
+	background-color: black;
+	opacity: 0.9;
+	display: block;
+	position: fixed;
+	text-align: center;
+	transition: width 1s; 
+	overflow-x: hidden;
+
+	}
+
+    #closeIcon{
+    position: absolute;
+    top: -30px;
+    right: 25px;
+    font-size: 50px;
+    margin-left: 50px;
+	}
+
+	.sideNav a{
+	text-decoration: none;
+	font-size: 1.3em;
+	color: white;
+	display: block;
+	padding: 5px;
+	font-family: Work Sans;
+	margin-top: 30px;
+
+	}
+
+	.sideNav a:hover{
+	color: #62C4B2;
+	text-decoration: none;
+	}
+
+
+
+/*Sign in modal dialog box*/
+	.modal-dialog {
+	    width: 300px;
+	}
+	.modal-footer {
+	    height: 70px;
+	    margin: 0;
+	}
+	.modal-footer .btn {
+	    font-weight: bold;
+	}
+
+	.input-group-addon {
+	    color: #fff;
+	    background: #3276B1;
+	}
+
+
+
+/*Header Landing Page*/
+	.logo-landing{
+		width: 20%; 
+		margin-top: 30px;
+	}
+
+	.banner-background{
+		width: 100%;
+		object-fit: cover;
+		max-height: 500px;
+		object-position:0 30%;
+		z-index: 1;
+		overflow-y: hidden;
+	}
+
+	#home{
+		width: 100%;
+		text-align: center;
+
+	}
+
+	.fixed{
+		position: fixed;
+		color: red;
+	}
+
+	.big-text{
+		font-size: 5em;
+		top: 100px;
+		font-family: 'Work Sans';
+		position: relative;
+		color: white;
+	}
+
+	.contact-us{
+		background-color:transparent; 
+		border-color: #56467a;
+		color: #56467a;  
+		margin: 10px; 
+		z-index: 30;
+	}
+
+
+	.introtext{
+		font-size: calc(0.6rem + 1vw); 
+		width: 40%; 
+		text-align: 
+		center; margin-left: 30%; 
+		color: dimgray; 
+		margin-top: 30px;
+	}
+
+
+/* news page */
+	.news{
+		width: 100%;
+		height: 700px;
+		margin-left: 0vw;
+		z-index: 1;
+		background-color: gold;
+		position: relative;
+		text-align: center;
+	}
+
+/* runway page */
+	.runway{
+		width: 100%;
+		height: 700px;
+		margin-left: 0vw;
+		z-index: 1;
+		background-color: orange;
+		position: relative;
+		text-align: center;
+	}
+
+/* spinouts page */
+	.spinouts{
+		width: 100%;
+		height: 700px;
+		margin-left: 0vw;
+		z-index: 1;
+		background-color: teal;
+		position: relative;
+		text-align: center;
+	}
+
+
+
+/* First Menu Bat */
+	.menubar{
+	
+		width: 100%
+		height: 50px;
+		margin-left: 0;
+		margin-top: -50px;
+		z-index: 10;
+		opacity: 0;
+
+		
+	}
+
+	.fixed{
+		position: fixed;
+		display: inline-block;
+		top: 50px;
+		width: 100%;
+		background-color: black;
+		width: 100%
+		height: 50px;
+		transition: opacity 1s;
+		webkit-transition:opacity 1s;
+		opacity: 0.9;
+		z-index: 10;
+
+	}
+
+
+
+	.menubar nav{
+		align-content: center;
+		text-decoration: none;
+		text-align: center;
+		list-style-type: none;
+		padding-top: 11px;
+		width: 100%;
+		height: 50px;
+		margin-top: -50px;
+		z-index: 20; 
+
+	}
+
+	.menubar nav li{
+		position: relative;
+		display: inline-block;
+		padding-left: 1vw;
+		padding-right: 1vw;
+
+	}
+
+
+	.submenu{
+		text-decoration: none;
+		color: gray;
+		background-color: none;
+		font-size: 20px;
+		font-family: 'Work Sans', sans-serif;
+		padding: 13px;
+
+	}
+
+	.submenu:hover{
+		/*background-color: #604B9F;*/
+		color: white;
+		text-decoration: underline #7A6AA5;
+	}
+
+
+
+/*Second Menu Bar (This is a filter)	*/
+
+	.search {
+	  width: 100%;
+	  position: relative
+	}
+
+	.searchTerm {
+	  /*float: left;*/
+	  position: absolute;
+	  width: 100%;
+	  border: 2px solid #56467A;
+	  padding: 5px;
+	  height: 35px;
+	  border-radius: 5px;
+	  outline: none;
+	  color: lightgray;
+	}
+
+	.searchTerm:focus{
+	  color: #56467a;
+	}
+
+	.searchButton {
+	  position: absolute;
+	  right: 0;  
+	  width: 35px;
+	  height: 35px;
+	  border: 1px solid #56467A;
+	  background: #56467A;
+	  text-align: center;
+	  color: #fff;
+	  border-radius: 5px;
+	  cursor: pointer;
+	  font-size: 20px;
+	}
+
+	/*Resize the wrap to see the search bar change!*/
+
+
+	.wrap{
+	  position: absolute;
+	  margin-top: 7.5px;	
+	  width: 400px;
+	  margin-left: 20px;
+	}
+
+	.filtermenu{
+		width: 100%;
+		height: 50px;
+		background-color: rgba(255,255,255,0.7);
+		position: absolute;
+		margin-top: 50px;
+		transition: opacity 1s;
+		webkit-transition:opacity 1s;
+		opacity: 0;
+	}
+
+	.nodisappear{
+		opacity: 1;
+	}
+
+/*Inside the second menu, this is the FILTER*/
+	
+	.filter-container{
+		text-align: center;
+		position: absolute;
+		right: 30px;
+		margin-top: 7.5px;
+		margin-left: 10px;
+		margin-right: 10px;
+
+	}
+
+
+
+	.filter-container div{
+		display: inline-flex;
+
+	}
+
+	.filter-container div label{
+		color: dimgray;
+
+	}
+	
+	.allboxes{
+	    opacity: 0;
+	    position: absolute;
+	     
+	}
+
+	.allboxes, .alllables{
+	    display: inline-block;
+	    vertical-align: middle;
+	    margin: 5px;
+	    cursor: pointer;
+	}
+
+	.alllables{
+	    position: relative;
+	}
+
+	.allboxes + .alllables:before{
+	    content: '';
+	    display: inline-block;
+	    vertical-align: middle;
+	    width: 20px;
+	    height: 20px;
+	    padding: 2px;
+	    margin-right: 10px;
+	    text-align: center;
+	}
+
+	.allboxes:checked + .alllables:before {
+	    background: transparent;
+	}
+
+	.checkbox-custom1 + .checkbox-custom-label1:before{
+	    border: 2px solid #56467A;
+	}
+
+	.checkbox-custom1:checked + .checkbox-custom-label1:before {
+	    background: #56467A;	
+	}
+
+	.checkbox-custom2 + .checkbox-custom-label2:before{
+	    border: 2px solid #3EB2A0;
+	}
+
+	.checkbox-custom2:checked + .checkbox-custom-label2:before {
+	    background: #3EB2A0;
+	}
+
+	.checkbox-custom3 + .checkbox-custom-label3:before{
+	    border: 2px solid #FFCA00;
+	}
+
+	.checkbox-custom3:checked + .checkbox-custom-label3:before {
+	    background: #FFCA00;
+	}
+
+	.checkbox-custom4 + .checkbox-custom-label4:before{
+	    border: 2px solid #393939;
+	}
+
+	.checkbox-custom4:checked + .checkbox-custom-label4:before {
+	    background: #393939;
+	}
+
+	.allboxes:focus + .alllables {
+	  outline: none; /* focus style */
+	}
+
+
+	.filterButton {
+	  right: 0;  
+	  width: 35px;
+	  height: 35px;
+	  border: 1px solid #56467A;
+	  background: #56467A;
+	  text-align: center;
+	  color: #fff;
+	  border-radius: 5px;
+	  cursor: pointer;
+	  font-size: 20px;
+	  display: none;
+	  position: absolute;
+	  margin: 7.5px;
+	}
+
+
+
+/*Footer*/
+
+	footer{
+		opacity: 0.9;
+		width: 100%
+		height: 15vh;
+		bottom: 0;
+		position: relative;
+		z-index: 30;
+		transition: 0.5s;
+		background-color: #604B9F;
+		
+	}
+
+
+	.purple{
+		color: white;
+		text-decoration: underline #7A6AA5;
+		/*text-decoration: none;*/
+	}
+
+
+	/*.t1, .t2, .t3, .t4, .t5 {
+		opacity: 0;
+		transition: opacity 0.5s;
+	}*/
+	.appear{
+		opacity: 1;
+	}
+
+	.display{
+		display: all;
+		opacity: 1;
+		transition: 0.5s;
+	}
+
+	
+
+
+/*Medium Screens*/
+@media (max-width: 890px) {
+
+	.filterButton {
+		display: inline-block;
+	}
+
+	.filter-container{
+		text-align: left;
+		right: 0;
+		padding: 10px;
+		margin-top: 50px;
+		/*background-color: rgba(255,255,255,0.5);*/
+		margin-right: 0;
+		z-index: 200;
+	}	
+
+
+
+	.filter-container div{
+		display: none;
+
+	}
+
+
+	.filter-container div.seefilter{
+		display: block;
+	}
+
+
+
+	
+
+}	
+
+
+/*Small Screens*/
+@media (max-width: 750px) {
+
+/*Show hamburguer menus in small displays and hide menu bar*/	
+	.ham-container{
+		display: inline-flex;
+	}
+
+	.menubar nav{
+		display: none;
+	}
+
+
 }
 
-.input-group-addon {
-    color: #fff;
-    background: #3276B1;
-}

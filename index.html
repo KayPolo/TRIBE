@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
 	<title>TRIBE</title>
 	<meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no">
@@ -9,14 +10,60 @@
 	<link rel="stylesheet" href="assets/css/normalize.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 </head>
 <body>
-	
-	<button style="background-color:gold;     border-color: white; position:absolute; margin: 10px; right: 0;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Sign in
-</button>
 
+
+	<div id="mySideNav" class="sideNav">
+		<a id="closeIcon" href="javascript:void(0)" onclick = "closeNav()">&times;</a>
+
+		
+		<a href="#home"><img style="height: 70px; margin: 20px;" src="assets/images/smallLogoVertical.png"></a>
+
+		<div style="width: 100%; height: 1px; background: transparent;"></div>
+
+		<button style="background-color:transparent;     border-color: #62C4B2;color: #62C4B2;
+		 	margin: 20px;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    		Sign in
+		</button>
+
+	</div>
+
+
+	<button style="background-color:transparent;     border-color: #56467a;color: #56467a; position:absolute; margin: 10px; right: 0; z-index: 30;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Sign in
+	</button>
+
+
+
+<div class="top-banner" id="home">
+	
+	<div class="ham-container">
+		<span class="hamberguer" style="font-size: 30px; color:#56467a; cursor: pointer;" onclick="openNav()">&#9776;</span>
+	</div>
+
+
+	<div style="position: absolute; width: 100%; text-align: center;">
+        	
+        
+        <img class="logo-landing" src="assets/images/tribe.png">
+
+        <p class="introtext">A companion and information tool for Runway Startup Postdoc & Spinout Programs @ Cornell Tech</p>
+
+        <button class="contact-us">Contact Us</button>
+
+    </div>
+	
+	<img class="banner-background" src="assets/images/tribe-back.png">
+</div>
+
+
+
+
+
+<!-- This is the pop up window for signing in -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -54,21 +101,113 @@
 			</div> <!-- /.modal-body -->
 
 			<div class="modal-footer" ">
-				<button style="    background-color: #7999ae;border-color: #7999ae;" 
+				<button style="    background-color: #3eb2a0;border-color: #3eb2a0;" 
 				class="form-control btn btn-primary">Sign In</button>
 
 			</div> <!-- /.modal-footer -->
 
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->	
+</div>
+
+
+
+<!-- This is the landing Page -->
+
+
+	<div class="menubar">
+		
+
+		 <nav>
+		 	<a href="#home"><img style="position: absolute; left: 25px; height: 27px;" src="assets/images/smallLogo.png"></a>
+		 	<button style="background-color:transparent;     border-color: #62C4B2;color: #62C4B2; position:absolute; margin-right: 10px;
+		 	 margin-top: -5px; right: 0;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    		Sign in
+		</button>
+
+
+		 	<li><a class="submenu link1" href="#news" tabindex="1">NEWS</a></li>
+		 	<li><a class="submenu link2" href="#runway" tabindex="1">RUNWAY</a></li>
+		 	<li><a class="submenu link3" href="#spinouts" tabindex="1">SPINOUTS</a></li>
+		</nav>
+
+
+			<div class="filtermenu">
+			
+				<div class="wrap">
+				   <div class="search">
+				      <input type="text" class="searchTerm" placeholder="Search">
+				      <button type="submit" class="searchButton">
+				        <i class="fa fa-search"></i>
+				     </button>
+				   </div>
+				</div>
+
+				<form class="filter-container filterLarge">
+					<div>
+				        <input id="checkbox-1" class="checkbox-custom1 allboxes" name="checkbox-1" type="checkbox" checked>
+				        <label for="checkbox-1" class="checkbox-custom-label1 alllables">Filter A</label>
+				      </div>
+
+				      <div>
+				        <input id="checkbox-2" class="checkbox-custom2 allboxes" name="checkbox-2" type="checkbox" checked>
+				        <label for="checkbox-2" class="checkbox-custom-label2 alllables">Filter B</label>
+				      </div>
+
+				      <div>
+				        <input id="checkbox-3" class="checkbox-custom3 allboxes" name="checkbox-3" type="checkbox" checked>
+				        <label for="checkbox-3" class="checkbox-custom-label3 alllables">Filter B</label>
+				      </div>
+
+				      <div>
+				        <input id="checkbox-4" class="checkbox-custom4 allboxes" name="checkbox-4" type="checkbox" checked>
+				        <label for="checkbox-4" class="checkbox-custom-label4 alllables">Filter D</label>
+				      </div>
+
+				    </form>  
+
+				    <div>
+				    	<button type="filter" class="filterButton">
+				        	<i class="fa fa-filter"></i>
+				     	</button>
+				    </div>
+
+				       
+
+
+				 
+
+			</div>
+			
+		</div>
+	
 
 
 
 
+	<div id="news" class="news page">
+		<div class="news-container">
+			<spam class="big-text t1">NEWS</spam>	 	
+		</div>		
+	</div>
+
+	<div id="runway" class="runway page">
+		<div class="runway-container">	
+			<spam class="big-text t2">RUNWAY</spam> 	
+		</div>		
+	</div>
+
+
+	<div id="spinouts" class="spinouts page">
+		<div class="spinouts-container">
+			<spam class="big-text t3">SPINOUTS</spam>	 	
+		</div>		
+	</div>
 
 
 	
+
+<!-- 	JS Links -->
 
 	<script type="text/javascript" src="assets/js/jquery-min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
