@@ -1,0 +1,316 @@
+{% from "_formhelpers.html" import render_field %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="shortcut icon"
+    href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+	<title>TRIBE</title>
+	<meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+
+	<div id="mySideNav" class="sideNav">
+		<a id="closeIcon" href="javascript:void(0)" onclick = "closeNav()">&times;</a>
+
+		
+		<a href="#home"><img style="height: 70px; margin: 20px;" src="{{ url_for('static', filename='images/smallLogoVertical.png') }}"></a>
+
+		<div style="width: 100%; height: 1px; background: transparent;"></div>
+
+		<button style="background-color:transparent;     border-color: #62C4B2;color: #62C4B2;
+		 	margin: 20px;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    		Sign in
+		</button>
+
+	</div>
+
+
+	<button style="background-color:transparent;     border-color: #56467a;color: #56467a; position:absolute; margin: 10px; right: 0; z-index: 30;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Sign in
+	</button>
+
+<!-- images -->
+
+<div class="top-banner" id="home">
+	
+	<div class="ham-container">
+		<span class="hamberguer" style="font-size: 30px; color:#56467a; cursor: pointer;" onclick="openNav()">&#9776;</span>
+	</div>
+
+
+	<div style="position: absolute; width: 100%; text-align: center;">
+        	
+        
+        <img class="logo-landing" src="{{ url_for('static', filename='images/tribe.png') }}">
+
+        <p class="introtext">A companion and information tool for Runway Startup Postdoc & Spinout Programs @ Cornell Tech</p>
+
+        <button class="contact-us">Contact Us</button>
+
+    </div>
+	
+	<img class="banner-background" src="{{ url_for('static', filename='images/tribe-back.png') }}">
+</div>
+
+
+
+
+
+<!-- This is the pop up window for signing in -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<img style="width: 30%; margin-right: 35%;margin-left: 35%;" src="{{ url_for('static', filename='images/tribe.png') }}">
+			
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="position: absolute; right: 3%;">×</button>
+				
+			</div> 
+
+			<div class="modal-body">
+				<form role="form">
+					<div class="form-group">
+						<div class="input-group">
+							
+							<form method="POST" action="/">
+							   <dl style="width: 100%;">
+							    
+							    {{ form.csrf_token (class_="form-control") }}
+
+
+
+							    {{ render_field(form.username, class_="form-control", value="",placeholder="User Name")}}
+							   
+
+
+							    {{ render_field(form.password, class_="form-control", value="",placeholder="Password") }}
+
+
+							    <div style="margin-left: 70%;" class="checkbox">
+									<label>
+										<input type="checkbox"> Remember me
+									</label>
+								</div>
+
+							    <div class="modal-footer" ">
+							    	<input class="form-control btn btn-primary" style="background-color: #3eb2a0;border-color: #3eb2a0;" type="submit" value="Sign In"></div> 
+							    </dl>
+
+							</form>
+							
+						</div>
+					</div> 
+
+				</form>
+
+			</div> 
+
+
+		</div>
+	</div>
+</div>
+
+
+
+<!-- This is the landing Page -->
+
+
+	<div class="menubar">
+		
+
+		 <nav>
+		 	<a href="#home"><img style="position: absolute; left: 25px; height: 27px;" 
+
+		 		src="{{ url_for('static', filename='images/smallLogo.png') }}"></a>
+		 	<button style="background-color:transparent;     border-color: #62C4B2;color: #62C4B2; position:absolute; margin-right: 10px;
+		 	 margin-top: -5px; right: 0;" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    		Sign in
+		</button>
+
+
+
+
+		 	<li><a class="submenu link1" href="#news" tabindex="1">NEWS</a></li>
+		 	<li><a class="submenu link2" href="#runway" tabindex="1">RUNWAY</a></li>
+		 	<li><a class="submenu link3" href="#spinouts" tabindex="1">SPINOUTS</a></li>
+		</nav>
+
+
+			<div class="filtermenu">
+			
+				<div class="wrap">
+				   <div class="search">
+				      <input type="text" class="searchTerm" placeholder="Search">
+				      <button type="submit" class="searchButton">
+				        <i class="fa fa-search"></i>
+				     </button>
+				   </div>
+				</div>
+
+
+
+				<form class="filter-container filterLarge">
+					<div>
+				        <input id="checkbox-1" class="checkbox-custom1 allboxes" name="checkbox-1" type="checkbox" checked>
+				        <label for="checkbox-1" class="checkbox-custom-label1 alllables">Filter A</label>
+				      </div>
+
+				      <div>
+				        <input id="checkbox-2" class="checkbox-custom2 allboxes" name="checkbox-2" type="checkbox" checked>
+				        <label for="checkbox-2" class="checkbox-custom-label2 alllables">Filter B</label>
+				      </div>
+
+				      <div>
+				        <input id="checkbox-3" class="checkbox-custom3 allboxes" name="checkbox-3" type="checkbox" checked>
+				        <label for="checkbox-3" class="checkbox-custom-label3 alllables">Filter B</label>
+				      </div>
+
+				      <div>
+				        <input id="checkbox-4" class="checkbox-custom4 allboxes" name="checkbox-4" type="checkbox" checked>
+				        <label for="checkbox-4" class="checkbox-custom-label4 alllables">Filter D</label>
+				      </div>
+
+				    </form>  
+
+				    <div>
+				    	<button type="filter" class="filterButton">
+				        	<i class="fa fa-filter"></i>
+				     	</button>
+				    </div>
+
+				       
+
+
+				 
+
+			</div>
+			
+		</div>
+	
+
+
+
+
+	<div id="news" class="news page">
+		<div class="news-container">
+
+<!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item carousel-multi-item-2" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="controls-top">
+        <a class="black-text" href="#multi-item-example" data-slide="prev"><i class="fa fa-angle-left fa-3x pr-3"></i></a>
+        <a class="black-text" href="#multi-item-example" data-slide="next"><i class="fa fa-angle-right fa-3x pl-3"></i></a>
+    </div>
+    <!--/.Controls-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+        <div class="carousel-item active">
+
+            <div style="display: inline-flex;" class="col-md-5 mb-5">
+                <div class="card">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(38).jpg" alt="Card image cap">
+                </div>
+            </div>
+
+            <div style="display: inline-flex;" class="col-md-5 mb-5">
+                <div class="card">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(19).jpg" alt="Card image cap">
+                </div>
+            </div>
+
+
+        </div>
+        <!--/.First slide-->
+
+        <!--Second slide-->
+        <div class="carousel-item">
+
+            <div style="display: inline-flex;" class="col-md-5 mb-5">
+                <div class="card">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(53).jpg" alt="Card image cap">
+                </div>
+            </div>
+
+            <div style="display: inline-flex;" class="col-md-5 mb-5">
+                <div class="card">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(25).jpg" alt="Card image cap">
+                </div>
+            </div>
+
+        </div>
+        <!--/.Second slide-->
+
+        <!--Third slide-->
+        <div class="carousel-item">
+
+            <div style="display: inline-flex;" class="col-md-5 mb-5">
+                <div class="card">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(64).jpg" alt="Card image cap">
+                </div>
+            </div>
+
+            <div style="display: inline-flex;" class="col-md-5 mb-5">
+                <div class="card">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg" alt="Card image cap">
+                </div>
+            </div>
+
+        </div>
+        <!--/.Third slide-->
+
+    </div>
+    <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->
+	 	
+		</div>		
+	</div>
+
+	<div id="runway" class="runway page">
+		<div class="runway-container">	
+			<spam class="big-text t2">RUNWAY</spam> 	
+		</div>		
+	</div>
+
+
+	<div id="spinouts" class="spinouts page">
+		<div class="spinouts-container">
+			<spam class="big-text t3">SPINOUTS</spam>	 	
+		</div>		
+	</div>
+
+
+	
+
+<!-- 	JS Links -->
+	
+
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+
+
+</body>
+</html>
